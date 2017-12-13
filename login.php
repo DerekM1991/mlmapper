@@ -31,10 +31,14 @@ if($_POST && !empty($_POST['username']) &&!empty($_POST['pwd'])) {
         </p>
 
         <p>
-          <input type="submit" id="submit" value="Login" name="submit" />
+          <input type="submit" id="submit" value="Login" name="submit" >
+          <input type="submit" id="submit" value="Register" name="register"/>
         </p>
+
+
       </form>
-      <?php if(isset($response)) echo "<h4 class-'alert'>" . $response . "</h4>"; ?>
+      <?php if(isset($_POST['register']))header("Location: registration.php");
+       if(isset($response)) echo "<h4 class-'alert'>" . $response . "</h4>"; ?>
   </div>
 </body>
 </html>
