@@ -8,35 +8,42 @@
   <div id="register">
     <form method="post" action"">
       <h2>Register</h2>
+      <?php echo "Please fill in all fields";?>
+
         <p>
           <label for="Name">Full Name:  </label>
-          <input type="text" name="fName" />
+          <input type="text" name="fName" required/>
+        </p>
+        <p>
+          <label for="company">MLM Company Name: </label>
+          <input type ="password" name="cName" required/>
         </p>
         <p>
           <label for="number">Phone Number: </label>
-          <input type ="text" name="number" />
+          <input type ="text" name="number" required/>
         </p>
         <p>
           <label for="email">Email: </label>
-          <input type ="text" name="Email" />
+          <input type ="text" name="Email" required/>
         </p>
         <p>
           <label for="city">City: </label>
-          <input type ="text" name="City" />
+          <input type ="text" name="City" required/>
         </p>
         <p>
           <label for="state">State: </label>
-          <select name="state"><?php echo StateDropdown(null, 'mixed'); ?></select>
+          <select name="state" required><?php echo StateDropdown(null, 'mixed'); ?> </select>
         </p>
 
         <p>
           <label for="pwd">Password: </label>
-          <input type ="password" name="Password" />
+          <input type ="password" name="Password" required/>
         </p>
         <p>
           <label for="cPwd">Confirm Password: </label>
-          <input type ="password" name="cPassword" />
+          <input type ="password" name="cPassword" required/>
         </p>
+
 
 
 
@@ -48,13 +55,13 @@
       </form>
 
       <?php if($_POST && !empty($_POST['fName']) &&!empty($_POST['number'])&&!empty($_POST['Email'])
-    &&!empty($_POST['City'])&&!empty($_POST['State'])&&!empty($_POST['Password'])&&!empty($_POST['cPassword'])) {
+    &&!empty($_POST['City'])&&!empty($_POST['state'])&&!empty($_POST['Password'])&&!empty($_POST['cPassword'])) {
         if(isset($_POST['Finish']))header("Location: test.php");}
 
-        if($_POST && empty($_POST['fName']) ||empty($_POST['number'])||empty($_POST['Email'])
-      ||empty($_POST['City'])||empty($_POST['State'])||empty($_POST['Password'])||empty($_POST['cPassword'])){
-          echo "Please fill in all fields";
-        }
+
+
+
+
 //function for state dropdown selector
         function StateDropdown($post=null, $type='abbrev') {
 	$states = array(
