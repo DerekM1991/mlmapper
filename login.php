@@ -3,8 +3,8 @@ session_start();
 require_once 'Membership.php';
 $membership = New Membership();
 
-if($_POST && !empty($_POST['username']) &&!empty($_POST['pwd'])) {
-  $response = $membership->validate_user($_POST['username'], $_POST['pwd']);
+if($_POST && !empty($_POST['Email']) &&!empty($_POST['pwd'])) {
+  $response = $membership->validate_user($_POST['Email'], $_POST['pwd']);
 }
  ?>
 
@@ -22,8 +22,8 @@ if($_POST && !empty($_POST['username']) &&!empty($_POST['pwd'])) {
     <form method="post" action"">
       <h2>Login</h2>
         <p>
-          <label for="name">Username: </label>
-          <input type="text" name="username" />
+          <label for="Email">Email: </label>
+          <input type="text" name="Email" />
         </p>
         <p>
           <label for="pwd">Password: </label>

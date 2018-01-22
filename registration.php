@@ -1,3 +1,15 @@
+<?php 
+session_start();
+require_once 'Mysql.php';
+
+if($_POST && !empty($_POST['fName']) &&!empty($_POST['lName']) &&!empty($_POST['cName'])&&!empty($_POST['number']) &&!empty($_POST['Email']) &&!empty($_POST['City']) &&!empty($_POST['state']) &&!empty($_POST['pwd'])) {
+  
+$mysql = New Mysql();
+$mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['number'], $_POST['Email'], $_POST['City'], $_POST['state'], $_POST['pwd'], $_POST['referral_Code']);
+        
+    }
+        ?>
+
 <html xmlns="http?//www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset-utf-8" />
@@ -11,12 +23,16 @@
       <?php echo "Please fill in all fields";?>
 
         <p>
-          <label for="Name">Full Name:  </label>
+          <label for="fName">First Name:  </label>
           <input type="text" name="fName" required/>
         </p>
         <p>
+          <label for="lName">Last Name:  </label>
+          <input type="text" name="lName" required/>
+        </p>
+        <p>
           <label for="company">MLM Company Name: </label>
-          <input type ="password" name="cName" required/>
+          <input type ="text" name="cName" required/>
         </p>
         <p>
           <label for="number">Phone Number: </label>
@@ -37,12 +53,17 @@
 
         <p>
           <label for="pwd">Password: </label>
-          <input type ="password" name="Password" required/>
+          <input type ="password" name="pwd" required/>
         </p>
         <p>
           <label for="cPwd">Confirm Password: </label>
           <input type ="password" name="cPassword" required/>
         </p>
+        <p>
+          <label for="referral_Code">Referral Code: </label>
+          <input type ="text" name="referral_Code" />
+        </p>
+
 
 
 
@@ -50,17 +71,23 @@
         <p>
           <input type="submit" id="submit" value="Finish" name="Finish" >
         </p>
+        
+
+
+
+
+
 
 
       </form>
 
-      <?php if($_POST && !empty($_POST['fName']) &&!empty($_POST['number'])&&!empty($_POST['Email'])
-    &&!empty($_POST['City'])&&!empty($_POST['state'])&&!empty($_POST['Password'])&&!empty($_POST['cPassword'])) {
-        if(isset($_POST['Finish']))header("Location: test.php");}
+      
+
+        
 
 
 
-
+<?php
 
 //function for state dropdown selector
         function StateDropdown($post=null, $type='abbrev') {
