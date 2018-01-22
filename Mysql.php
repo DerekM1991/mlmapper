@@ -36,6 +36,7 @@ $query= "INSERT INTO Users(First_Name, Last_Name, Company_Name, Phone_Number, Em
 
 if(mysqli_query($conn, $query)){
   echo "Records inserted successfully.";
+  header("location: test.php");
 } else{
   echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
 
