@@ -7,7 +7,7 @@ class Membership {
 
   if($ensure_credentials){
     $_SESSION['status'] = 'authorized';
-    header("location: test.php");
+    header("location: home.html");
 
 
   }else return "Incorrect username and password";
