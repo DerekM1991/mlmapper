@@ -2,10 +2,10 @@
 session_start();
 require_once 'Mysql.php';
 
-if($_POST && !empty($_POST['fName']) &&!empty($_POST['lName']) &&!empty($_POST['cName'])&&!empty($_POST['number']) &&!empty($_POST['Email']) &&!empty($_POST['City']) &&!empty($_POST['state']) &&!empty($_POST['pwd'])) {
+if($_POST && !empty($_POST['fName']) &&!empty($_POST['lName']) &&!empty($_POST['cName'])&&!empty($_POST['number']) &&!empty($_POST['Email']) &&!empty($_POST['City']) &&!empty($_POST['state']) &&!empty($_POST['Postal_Code']) &&!empty($_POST['pwd'])) {
   
 $mysql = New Mysql();
-$mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['number'], $_POST['Email'], $_POST['City'], $_POST['state'], $_POST['pwd'], $_POST['referral_Code']);
+$mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['number'], $_POST['Email'], $_POST['City'], $_POST['state'], $_POST['Postal_Code'], $_POST['pwd'], $_POST['referral_Code']);
         
     }
         ?>
@@ -49,6 +49,10 @@ $mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['numb
         <p>
           <label for="state">State: </label>
           <select name="state" required><?php echo StateDropdown(null, 'mixed'); ?> </select>
+        </p>
+        <p>
+          <label for="Postal_Code">Postal Code:  </label>
+          <input type="text" name="Postal_Code" required/>
         </p>
 
         <p>

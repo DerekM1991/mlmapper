@@ -46,6 +46,7 @@ while ($row = @mysqli_fetch_assoc($result)){
   $newnode->setAttribute("Email", $row['Email']);
   $newnode->setAttribute("City", $row['City']);
   $newnode->setAttribute("State", $row['State']);
+  $newnode->setAttribute("Postal_Code", $row['Postal_Code']);
   $newnode->setAttribute("Referral_Code", $row['Referral_Code']);
 }
 

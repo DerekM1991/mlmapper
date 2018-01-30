@@ -28,11 +28,11 @@ class Mysql {
 
 
   
-  function add_User($fName, $lName, $cName, $number, $Email, $City, $state, $pwd, $referral_Code){
+  function add_User($fName, $lName, $cName, $number, $Email, $City, $state, $Postal_Code, $pwd, $referral_Code){
 
 $conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('there was a problem connecting to the database.');
 
-$query= "INSERT INTO Users(First_Name, Last_Name, Company_Name, Phone_Number, Email, City, State, Password, Referral_Code) VALUES ('$fName', '$lName', '$cName', '$number', '$Email', '$City','$state', '$pwd', '$referral_Code')";
+$query= "INSERT INTO Users(First_Name, Last_Name, Company_Name, Phone_Number, Email, City, State, Postal_Code, Password, Referral_Code) VALUES ('$fName', '$lName', '$cName', '$number', '$Email', '$City','$state', $Postal_Code, '$pwd', '$referral_Code')";
 
 if(mysqli_query($conn, $query)){
   echo "Records inserted successfully.";
