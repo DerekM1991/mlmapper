@@ -25,7 +25,7 @@ if (!$db_selected) {
 
 // Select all the rows in the markers table
 
-$query = "SELECT * FROM Users GROUP BY Postal_Code";
+$query = "SELECT * FROM `Users` GROUP BY `Postal_Code";
 $result = mysqli_query($conn, $query);
 if (!$result) {
   die('Invalid query: ' . mysql_error());
@@ -47,7 +47,8 @@ while ($row = @mysqli_fetch_assoc($result)){
   $newnode->setAttribute("City", $row['City']);
   $newnode->setAttribute("State", $row['State']);
   $newnode->setAttribute("Postal_Code", $row['Postal_Code']);
-  $newnode->setAttribute("Referral_Code", $row['Referral_Code']);
+  $newnode->setAttribute("Latitude", $row['Latitude']);
+  $newnode->setAttribute("Longitude", $row['Longitude']);
 }
 
 echo $dom->saveXML();
