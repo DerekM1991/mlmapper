@@ -29,8 +29,31 @@ class Mysql {
 
   
   function add_User($fName, $lName, $cName, $number, $Email, $City, $state, $Postal_Code, $pwd, $referral_Code){
+    function get_coordinates($City, $state){
+      $City = str_replace(' ', '+', $City);
+      //echo $City;
+      $xml_url = "https://maps.googleapis.com/maps/api/geocode/xml?address='+$City',+'+$state'&key=%20AIzaSyDDwwwh9p1ioQsVK0wxsvJYUW7wW13E2vQ";
+      if (($response_xml_data = file_get_contents($xml_url))===false){
+    echo "Error fetching XML\n";
+} else {
+   libxml_use_internal_errors(true);
+   $data = simplexml_load_string($response_xml_data);
+   if (!$data) {
+       echo "Error loading XML\n";
+       foreach(libxml_get_errors() as $error) {
+           echo "\t", $error->message;
+       }
+   } else {
+      print_r($data);
+      //return array($latitude, $longitude);
+   }
+}
 
-$conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('there was a problem connecting to the database.');
+}
+
+/*list($latitude, $longitude) = */get_coordinates($City, $state);
+
+/*$conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('there was a problem connecting to the database.');
 
 $query= "INSERT INTO Users(First_Name, Last_Name, Company_Name, Phone_Number, Email, City, State, Postal_Code, Password, Referral_Code) VALUES ('$fName', '$lName', '$cName', '$number', '$Email', '$City','$state', $Postal_Code, '$pwd', '$referral_Code')";
 
@@ -43,7 +66,8 @@ if(mysqli_query($conn, $query)){
 }
 // Close connection
 mysqli_close($conn);
-
+*/
 }
+
 
 }
