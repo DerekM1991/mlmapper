@@ -6,6 +6,7 @@ class Mysql {
   function __construct() {
     $this->conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('There was a problem connecting to the database.');
   }
+
   function verify_Username_and_Pass($Email, $pwd){
     $conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('There was a problem connecting to the database.');
 
@@ -73,6 +74,17 @@ if(mysqli_query($conn, $query)){
 mysqli_close($conn);
 
 }
+
+/*function show_users($uCity, $uState){
+ 
+ $query= "SELECT*
+    FROM Users
+    WHERE City = 'uCity' AND state = 'uState'";
+    header("location: test.php");
+    echo $query;
+
+}*/
+
 
 
 }

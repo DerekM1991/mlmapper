@@ -3,6 +3,11 @@ session_start();
 require_once 'Membership.php';
 $membership = New Membership();
 
+//if user clicks log out
+if(isset($_GET['status']) && $_GET['status'] == 'loggedOut'){
+  $membership->log_out();
+}
+
 if($_POST && !empty($_POST['Email']) &&!empty($_POST['pwd'])) {
   $response = $membership->validate_user($_POST['Email'], $_POST['pwd']);
 }
