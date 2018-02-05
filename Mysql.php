@@ -49,8 +49,7 @@ class Mysql {
       $latitude = $data->result->geometry->location->lat[0];
       $longitude = $data->result->geometry->location->lng[0];
 
-      echo $latitude;
-      echo $longitude;
+    
       return array($latitude, $longitude);
    }
 }
@@ -65,7 +64,8 @@ $query= "INSERT INTO Users(First_Name, Last_Name, Company_Name, Phone_Number, Em
 
 if(mysqli_query($conn, $query)){
   echo "Records inserted successfully.";
-  header("location: test.php");
+  $_SESSION['status'] = 'authorized';
+  header("location: home.php");
 } else{
   echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
 
@@ -75,15 +75,6 @@ mysqli_close($conn);
 
 }
 
-/*function show_users($uCity, $uState){
- 
- $query= "SELECT*
-    FROM Users
-    WHERE City = 'uCity' AND state = 'uState'";
-    header("location: test.php");
-    echo $query;
-
-}*/
 
 
 

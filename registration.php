@@ -20,6 +20,8 @@ $mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['numb
   <div id="register">
     <form method="post" action"">
       <h2>Register</h2>
+      <form class="pure-form">
+    <fieldset>
       <?php echo "Please fill in all fields";?>
 
         <p>
@@ -36,7 +38,7 @@ $mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['numb
         </p>
         <p>
           <label for="number">Phone Number: </label>
-          <input type ="text" name="number" required/>
+          <input type ="tel" name="number" required/>
         </p>
         <p>
           <label for="email">Email: </label>
@@ -67,7 +69,8 @@ $mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['numb
           <label for="referral_Code">Referral Code: </label>
           <input type ="text" name="referral_Code" />
         </p>
-
+        </fieldset>
+        
 
 
 
@@ -75,7 +78,7 @@ $mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['numb
         <p>
           <input type="submit" id="submit" value="Finish" name="Finish" >
         </p>
-        
+        </form>
 
 
 
@@ -92,6 +95,7 @@ $mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['numb
 
 
 <?php
+
 
 //function for state dropdown selector
         function StateDropdown($post=null, $type='abbrev') {

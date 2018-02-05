@@ -23,6 +23,7 @@ if($_POST && !empty($_POST['Email']) &&!empty($_POST['pwd'])) {
 </head>
 
 <body>
+
   <div id="login">
     <form method="post" action"">
       <h2>Login</h2>
