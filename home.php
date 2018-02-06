@@ -7,6 +7,30 @@ $membership-> confirm_login();
 ?>
 
 <html >
+<br>
+<br>
+<br>
+
+<div style="float: left";">
+
+<form class="form-inline">
+  <div class="form-group">
+    <label for="exampleInputName2">City: &nbsp; </label>
+    <input type="text" class="form-control" id="City" placeholder="City" required="">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="exampleInputEmail2">State:</label>
+    <input type="email" class="form-control" id="State" placeholder="Two Letter Abbreviation" required="">
+  </div>
+  
+  <br>
+  <!--search users form with button -->
+  
+<button type="submit" id="search_Button"  Onclick="setUrl(); return false;" >Search Users</button>
+</form>
+</div>
+</p>
 
 
 <head>
@@ -39,10 +63,10 @@ $membership-> confirm_login();
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="home.php" target="_blank">Home</a></li>
-        <li><a href="about.php" target="_blank">About</a></li>
-        <li><a href="contact.php" target="_blank">Contact</a></li>
-        <li><a href="login.php?status=loggedOut" target="_blank">Log Out</a></li>
+        <li class="active"><a href="home.php" target="_self">Home</a></li>
+        <li><a href="about.php" target="_self">About</a></li>
+        <li><a href="contact.php" target="_self">Contact</a></li>
+        <li><a href="login.php?status=loggedOut" target="_self">Log Out</a></li>
 
       </ul>
     </div>
@@ -60,7 +84,7 @@ $membership-> confirm_login();
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
-        margin-left: 10%;
+        margin-left: 0;
         padding: 0;
       }
     </style>
@@ -157,25 +181,10 @@ $membership-> confirm_login();
   </body>
 
   <style type="text/css">
-    p { margin-right: 0%; /* Or another measurement unit, like px */ }
+    p { margin-right: 90%; /* Or another measurement unit, like px */ }
   </style>
   <p>
-<form class="form-inline">
-  <div class="form-group">
-    <label for="exampleInputName2">City:   </label>
-    <input type="text" class="form-control" id="City" placeholder="City">
-  </div>
-  <br>
-  <div class="form-group">
-    <label for="exampleInputEmail2">State:</label>
-    <input type="email" class="form-control" id="State" placeholder="Two Letter Abbreviation">
-  </div>
-  <br>
-  <!--search users form with button -->
   
-<button type="submit" id="search_Button"  Onclick="setUrl(); return false;" >Search Users</button>
-</form>
-</p>
 </html>
 
 <!--function defined for url with query string-->
