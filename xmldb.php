@@ -25,7 +25,7 @@ if (!$db_selected) {
 
 // Select all the rows in the markers table
 
-$query = "SELECT * FROM `Users` GROUP BY `Postal_Code";
+$query = "SELECT * FROM `Users` GROUP BY `City`, `State` ";
 $result = mysqli_query($conn, $query);
 if (!$result) {
   die('Invalid query: ' . mysql_error());

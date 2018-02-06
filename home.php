@@ -39,9 +39,9 @@ $membership-> confirm_login();
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="home.html" target="_blank">Home</a></li>
-        <li><a href="https://www.tutorialrepublic.com/about-us.php" target="_blank">About</a></li>
-        <li><a href="https://www.tutorialrepublic.com/contact-us.php" target="_blank">Contact</a></li>
+        <li class="active"><a href="home.php" target="_blank">Home</a></li>
+        <li><a href="about.php" target="_blank">About</a></li>
+        <li><a href="contact.php" target="_blank">Contact</a></li>
         <li><a href="login.php?status=loggedOut" target="_blank">Log Out</a></li>
 
       </ul>
@@ -60,7 +60,7 @@ $membership-> confirm_login();
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
-        margin: 10%;
+        margin-left: 10%;
         padding: 0;
       }
     </style>
@@ -155,4 +155,32 @@ $membership-> confirm_login();
     src="https://maps.googleapis.com/maps/api/js?key= AIzaSyB2KxZ0mZh_3siIIVuC8YXkxnFPk-xs0rw &callback=initMap">
     </script>
   </body>
+
+  <style type="text/css">
+    p { margin-right: 0%; /* Or another measurement unit, like px */ }
+  </style>
+  <p>
+<form class="form-inline">
+  <div class="form-group">
+    <label for="exampleInputName2">City:   </label>
+    <input type="text" class="form-control" id="City" placeholder="City">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="exampleInputEmail2">State:</label>
+    <input type="email" class="form-control" id="State" placeholder="Two Letter Abbreviation">
+  </div>
+  <br>
+  <!--search users form with button -->
+  
+<button type="submit" id="search_Button"  Onclick="setUrl(); return false;" >Search Users</button>
+</form>
+</p>
 </html>
+
+<!--function defined for url with query string-->
+<script type="text/javascript">
+function setUrl() {
+    window.location.href = 'test.php?city='+document.getElementById('City').value+'&state='+document.getElementById('State').value;
+};
+</script>

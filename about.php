@@ -1,10 +1,6 @@
-<?php
-require_once 'constants.php';
-require_once 'Membership.php';
-$membership = New Membership();
-$membership-> confirm_login();
-?>
 <html>
+
+
    <body>
    <head>
 <meta charset="utf-8">
@@ -45,48 +41,7 @@ $membership-> confirm_login();
     </div>
   </div>
 </nav>
-      <?php
-         
-      $str= $_SERVER['QUERY_STRING']; 
-      parse_str($str, $output);
-      $city = $output['city'];
-      $state = $output['state'];
-
-     
-
-      
-         	$conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('there was a problem connecting to the database.');
-
-         	$query= "SELECT*
-         	FROM Users
-         	WHERE City = '$city' 
-         	AND state = '$state'
-         	ORDER BY Company_Name";
-
-         	$result =mysqli_query($conn, $query);
-
-            echo "<table border = '2'>
-            <tr>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Company</th>
-            </tr>";
-         	while($row = mysqli_fetch_array($result)){
-         		echo'
-               <tr>
-               <td> ' .$row['First_Name'].' '.$row['Last_Name'].'</td>
-               <td> '.$row['Phone_Number'].'</td>
-               <td> ' .$row['Email'].'</td>
-               <td> ' .$row['Company_Name'].'</td>
-                </tr>';
-
-         	}
-         	mysqli_close($conn);
 
 
-         
-  
-      ?>
-   </body>
-</html>
+<?php
+echo "Don't not currently taking any questons or explaining ourselves.";
