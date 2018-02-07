@@ -11,6 +11,7 @@
 <style type="text/css">
     body{
       padding-top: 70px;
+      background-color: #b0defe;
     }
 </style>
 </head>

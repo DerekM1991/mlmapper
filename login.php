@@ -20,6 +20,12 @@ if($_POST && !empty($_POST['Email']) &&!empty($_POST['pwd'])) {
 <head>
 <meta http-equiv="Content-type" content="text/html; charset-utf-8" />
 <title>Login to web App</title>
+<style type="text/css">
+    body{
+      padding-top: 40px;
+      background-color: #b0defe;
+    }
+</style>
 </head>
 
 <body>
@@ -27,6 +33,7 @@ if($_POST && !empty($_POST['Email']) &&!empty($_POST['pwd'])) {
   <div id="login">
     <form method="post" action"">
       <h2>Login</h2>
+      <fieldset>
         <p>
           <label for="Email">Email: </label>
           <input type="text" name="Email" />
@@ -35,6 +42,7 @@ if($_POST && !empty($_POST['Email']) &&!empty($_POST['pwd'])) {
           <label for="pwd">Password: </label>
           <input type ="password" name="pwd" />
         </p>
+        </fieldset>
 
         <p>
           <input type="submit" id="submit" value="Login" name="submit" >

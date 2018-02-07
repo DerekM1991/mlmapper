@@ -11,7 +11,7 @@ $membership-> confirm_login();
 <br>
 <br>
 
-<div style="float: left";">
+<div style="float: left";>
 
 <form class="form-inline">
   <div class="form-group">
@@ -43,7 +43,8 @@ $membership-> confirm_login();
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
     body{
-      padding-top: 70px;
+      padding-top: 40px;
+      background-color: #b0defe;
     }
 </style>
 </head>
@@ -58,7 +59,7 @@ $membership-> confirm_login();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MLMapper</a>
+      <a class="navbar-brand" href="home.php">MLMapper</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -184,7 +185,6 @@ $membership-> confirm_login();
     p { margin-right: 90%; /* Or another measurement unit, like px */ }
   </style>
   <p>
-  
 </html>
 
 <!--function defined for url with query string-->

@@ -12,6 +12,12 @@ $mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['numb
 
 <html xmlns="http?//www.w3.org/1999/xhtml">
 <head>
+<style type="text/css">
+    body{
+      padding-top: 40px;
+      background-color: #b0defe;
+    }
+</style>
 <meta http-equiv="Content-type" content="text/html; charset-utf-8" />
 <title>Register for web App</title>
 </head>
