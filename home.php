@@ -5,7 +5,7 @@ require_once 'Membership.php';
 $membership = New Membership();
 $membership-> confirm_login();
 ?>
-
+<!--start top bar-->
 <html >
 <br>
 <br>
@@ -15,13 +15,13 @@ $membership-> confirm_login();
 
 <form class="form-inline">
   <div class="form-group">
-    <label for="exampleInputName2">City: &nbsp; </label>
-    <input type="text" class="form-control" id="City" placeholder="City" required="">
+    <label for="City">City: &nbsp; </label>
+    <input type="text" class="form-control" id="City" placeholder="City" required>
   </div>
   <br>
   <div class="form-group">
-    <label for="exampleInputEmail2">State:</label>
-    <input type="email" class="form-control" id="State" placeholder="Two Letter Abbreviation" required="">
+    <label for="Email">State:</label>
+    <input type="email" class="form-control" id="State" placeholder="Two Letter Abbreviation" required>
   </div>
   
   <br>
@@ -30,7 +30,7 @@ $membership-> confirm_login();
 <button type="submit" id="search_Button"  Onclick="setUrl(); return false;" >Search Users</button>
 </form>
 </div>
-</p>
+
 
 
 <head>
@@ -43,8 +43,8 @@ $membership-> confirm_login();
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
     body{
-      padding-top: 40px;
-      background-color: #b0defe;
+      padding-top: 50px;
+      background-color: #90c3f3;
     }
 </style>
 </head>
@@ -67,12 +67,16 @@ $membership-> confirm_login();
         <li class="active"><a href="home.php" target="_self">Home</a></li>
         <li><a href="about.php" target="_self">About</a></li>
         <li><a href="contact.php" target="_self">Contact</a></li>
+        <li><a href="settings.php" target="_self">Settings</a></li>
         <li><a href="login.php?status=loggedOut" target="_self">Log Out</a></li>
 
       </ul>
     </div>
   </div>
 </nav>
+<!--end top bar-->
+
+
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Using MySQL and PHP with Google Maps</title>

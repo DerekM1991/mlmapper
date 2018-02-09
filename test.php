@@ -16,8 +16,18 @@ $membership-> confirm_login();
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
     body{
-      padding-top: 70px;
-    }
+      padding-top: 60px;
+      background-color: #b1bbc5;
+      
+      
+      
+}
+table{
+   
+    table-layout: fixed;
+    height: 200px;
+}
+
 </style>
 </head>
 <body>
@@ -31,7 +41,7 @@ $membership-> confirm_login();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MLMapper</a>
+      <a class="navbar-brand" href="home.php">MLMapper</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -39,6 +49,7 @@ $membership-> confirm_login();
         <li class="active"><a href="home.php" target="_self">Home</a></li>
         <li><a href="about.php" target="_self">About</a></li>
         <li><a href="contact.php" target="_self">Contact</a></li>
+        <li><a href="settings.php" target="_self">Settings</a></li>
         <li><a href="login.php?status=loggedOut" target="_self">Log Out</a></li>
 
       </ul>
@@ -64,17 +75,19 @@ $membership-> confirm_login();
          	ORDER BY Company_Name";
 
          	$result =mysqli_query($conn, $query);
-
-            echo "<table border = '2'>
+         
+          
+          
+            echo "<table border = '7' align='center'>
             <tr>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Company</th>
+            <th style='text-align: center'>Name</th>
+            <th style='text-align: center'='center'>Phone Number</th>
+            <th style='text-align: center'>Email</th>
+            <th style='text-align: center'>Company</th>
             </tr>";
          	while($row = mysqli_fetch_array($result)){
          		echo'
-               <tr>
+               <tr align="center">
                <td> ' .$row['First_Name'].' '.$row['Last_Name'].'</td>
                <td> '.$row['Phone_Number'].'</td>
                <td> ' .$row['Email'].'</td>
@@ -82,6 +95,7 @@ $membership-> confirm_login();
                 </tr>';
 
          	}
+          
          	mysqli_close($conn);
 
 

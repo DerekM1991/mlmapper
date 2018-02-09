@@ -1,4 +1,5 @@
 <html>
+<!--start top bar-->
    <body>
    <head>
 <meta charset="utf-8">
@@ -11,7 +12,7 @@
 <style type="text/css">
     body{
       padding-top: 70px;
-      background-color: #b0defe;
+      background-color: #b1bbc5;
     }
 </style>
 </head>
@@ -26,7 +27,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MLMapper</a>
+      <a class="navbar-brand" href="home.php">MLMapper</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -34,11 +35,13 @@
         <li class="active"><a href="home.php" target="_self">Home</a></li>
         <li><a href="about.php" target="_self">About</a></li>
         <li><a href="contact.php" target="_self">Contact</a></li>
+        <li><a href="settings.php" target="_self">Settings</a></li>
         <li><a href="login.php?status=loggedOut" target="_self">Log Out</a></li>
 
       </ul>
     </div>
   </div>
 </nav>
+<!--end top bar-->
 <?php
 echo "Don't call us, we'll call you!";

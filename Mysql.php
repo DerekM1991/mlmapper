@@ -8,6 +8,8 @@ class Mysql {
   }
 
   function verify_Username_and_Pass($Email, $pwd){
+   
+
     $conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('There was a problem connecting to the database.');
 
     $query= "SELECT*

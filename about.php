@@ -1,6 +1,6 @@
 <html>
 
-
+<!--start top bar-->
    <body>
    <head>
 
@@ -29,7 +29,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MLMapper</a>
+      <a class="navbar-brand" href="home.php">MLMapper</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -37,13 +37,14 @@
         <li class="active"><a href="home.php" target="_self">Home</a></li>
         <li><a href="about.php" target="_self">About</a></li>
         <li><a href="contact.php" target="_self">Contact</a></li>
+        <li><a href="settings.php" target="_self">Settings</a></li>
         <li><a href="login.php?status=loggedOut" target="_self">Log Out</a></li>
 
       </ul>
     </div>
   </div>
 </nav>
-
+<!--end top bar-->
 
 <?php
 echo "Don't not currently taking any questons or explaining ourselves.";
