@@ -62,15 +62,35 @@ $mysql->add_User($_POST['fName'], $_POST['lName'], $_POST['cName'], $_POST['numb
           <label for="Postal_Code">Postal Code:  </label>
           <input type="text" name="Postal_Code" required/>
         </p>
-
         <p>
           <label for="pwd">Password: </label>
-          <input type ="password" name="pwd" required/>
-        </p>
-        <p>
-          <label for="cPwd">Confirm Password: </label>
-          <input type ="password" name="cPassword" required/>
-        </p>
+          <input type="password" placeholder="Password" id="pwd" name="pwd" required> 
+          </p>
+
+          <p>
+          <label for="confirm_password">Confirm Password: </label>
+          <input type="password" placeholder="Confirm Password" id="confirm_password" required>
+          <label>Will be red if passwords do not match</label>
+          </p>
+        
+
+    
+<script type="text/javascript">
+
+	var password = document.getElementById("pwd")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
         <p>
           <label for="referral_Code">Referral Code: </label>
           <input type ="text" name="referral_Code" />

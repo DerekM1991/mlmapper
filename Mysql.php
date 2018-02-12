@@ -77,6 +77,17 @@ mysqli_close($conn);
 
 }
 
+function update_password($Email, $pwd){
+  $conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('There was a problem connecting to the database.');
+
+$query= "UPDATE Users
+SET Password='$pwd'
+WHERE Email='$Email' ";
+
+    mysqli_query($conn, $query);
+}
+
+
 
 
 

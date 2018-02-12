@@ -44,7 +44,7 @@ $membership-> confirm_login();
 <style type="text/css">
     body{
       padding-top: 50px;
-      background-color: #90c3f3;
+      background-color: #b1bbc5;
     }
 </style>
 </head>

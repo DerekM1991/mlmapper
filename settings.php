@@ -14,6 +14,7 @@
       padding-top: 50px;
       background-color: #90c3f3;
     }
+
 </style>
 </head>
 <body>
@@ -43,10 +44,11 @@
   </div>
 </nav>
 <!--end top bar-->
-
+<h2> Edit Account Info</h2>
 
 <?php
-require_once 'Mysql.php';
+require 'Mysql.php';
+$mysql = New Mysql();
 session_start();
 $user=$_SESSION['Email'];
 echo $user, " ";
@@ -60,50 +62,67 @@ $query= "SELECT *
     $result =mysqli_query($conn, $query);
     $row=mysqli_fetch_array($result);
   echo $row['Password'];
+  if($_POST){
+  	if (isset($_POST['password'])) {
+  		$pwd = $_POST['password'];
+  		$mysql->update_password($user,$pwd);
+  }
 
+}
     ?>
 
 
 <br>
 
 
-<form class="form-inline">
+<form class="form-inline" method="post">
   <div class="form-group">
     <label for="City">City: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-    <input type="text" class="form-control" id="City" placeholder= 'New City' >
+    <input type="text" class="form-control" id="City" placeholder= 'New City' name="City" >
+  
+  <input type="submit" id="submit" value="Update City" name="Change_City" >
   </div>
-  <br>
+</form>
+  
  
-<form class="form-inline">
+<form class="form-inline" method="post">
   <div class="form-group">
     <label for="State">State: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
     <input type="text" class="form-control" id="State" placeholder= 'New State' >
+  
+  <input type="submit" id="submit" value="Update State" name="Change_State" >
   </div>
-  <br>
+</form>
 
-<form class="form-inline">
-  <div class="form-group">
-    <label for="Email">New Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-    <input type="text" class="form-control" id="Email" placeholder= 'New Email' >
-  </div>
-  <br>
+<!--change password-->
+<form class="pure-form" method="post">
+    <fieldset>
+        <legend>Change Password</legend>
+
+        <input type="password" placeholder="Password" id="password" name="password" required>
+        <input type="password" placeholder="Confirm Password" id="confirm_password" required>
+
+        <input type="submit" id="submit" value="Update Password" name="Change_Password" >
+    </fieldset>
+</form>
+
 
     
+<script type="text/javascript">
 
-<form class="form-inline">
-  <div class="form-group">
-    <label for="Password">New Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-    <input type="Password" class="form-control" id="Password" placeholder= 'New Password' >
-  </div>
-  <br>
-  <div class="form-group">
-    <label for="Email">Confirm Password:</label>
-    <input type="Password" class="form-control" id="cPassword" placeholder='Confirm Password' required>
-  </div>
-  
-  <br>
-  <!--Update Password with button -->
-  
-<button type="submit" id="update_password"  Onclick="setUrl(); return false;" >Update Password</button>
-</form>
+	var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+
 

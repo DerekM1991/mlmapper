@@ -14,6 +14,12 @@
       padding-top: 70px;
       background-color: #b1bbc5;
     }
+    h2{
+   margin-left: 'auto';
+  
+
+    
+}
 </style>
 </head>
 <body>
@@ -43,5 +49,6 @@
   </div>
 </nav>
 <!--end top bar-->
+<h2>Contact info</h2>
 <?php
 echo "Don't call us, we'll call you!";

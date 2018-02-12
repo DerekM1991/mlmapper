@@ -45,6 +45,7 @@
   </div>
 </nav>
 <!--end top bar-->
+<h2>About Us</h2>
 
 <?php
 echo "Don't not currently taking any questons or explaining ourselves.";
