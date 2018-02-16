@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <html>
 
 <!--start top bar-->
@@ -45,11 +48,11 @@
 </nav>
 <!--end top bar-->
 <h2> Edit Account Info</h2>
-
 <?php
+session_start();
 require 'Mysql.php';
 $mysql = New Mysql();
-session_start();
+
 $user=$_SESSION['Email'];
 echo $user, " ";
 

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once 'Membership.php';
 $membership = New Membership();
@@ -11,14 +12,8 @@ if(isset($_GET['status']) && $_GET['status'] == 'loggedOut'){
 if($_POST && !empty($_POST['Email']) &&!empty($_POST['pwd'])) {
   $response = $membership->validate_user($_POST['Email'], $_POST['pwd']);
 }
- ?>
-
-
- <!DOCTYPE html PUBLIC "-//W3c/DTD XHTML 1.0 Transitionsl//EN"
-"http://www.w3.org/TR/xhtml/DTD/xhtml-transitional.dtd">
-<html xmlns="http?//www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-type" content="text/html; charset-utf-8" />
+?>
+<html>
 <title>Login to web App</title>
 <style type="text/css">
     body{
@@ -26,8 +21,6 @@ if($_POST && !empty($_POST['Email']) &&!empty($_POST['pwd'])) {
       background-color: #b0defe;
     }
 </style>
-</head>
-
 <body>
 
   <div id="login">
@@ -48,11 +41,11 @@ if($_POST && !empty($_POST['Email']) &&!empty($_POST['pwd'])) {
           <input type="submit" id="submit" value="Login" name="submit" >
           <input type="submit" id="submit" value="Register" name="register"/>
         </p>
-
-
-      </form>
+        </form>  
+        </div>
+        </body>
+        </html>
       <?php if(isset($_POST['register']))header("Location: registration.php");
        if(isset($response)) echo "<h4 class-'alert'>" . $response . "</h4>"; ?>
-  </div>
-</body>
-</html>
+
+    

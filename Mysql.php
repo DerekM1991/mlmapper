@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once 'constants.php';
 class Mysql {
   private $conn;
@@ -62,12 +63,14 @@ list($latitude, $longitude) = get_coordinates($City, $state);
 
 $conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('there was a problem connecting to the database.');
 
-$query= "INSERT INTO Users(First_Name, Last_Name, Company_Name, Phone_Number, Email, City, State, Postal_Code, Password, Referral_Code, Latitude, Longitude) VALUES ('$fName', '$lName', '$cName', '$number', '$Email', '$City','$state', $Postal_Code, '$pwd', '$referral_Code', $latitude, $longitude)";
+$query= "INSERT INTO Users(First_Name, Last_Name, Company_Name, Phone_Number, Email, City, State, Postal_Code, Password, Referral_Code, Latitude, Longitude) VALUES('$fName', '$lName', '$cName', '$number', '$Email', '$City','$state', $Postal_Code, '$pwd', '$referral_Code', $latitude, $longitude)";
+
 
 if(mysqli_query($conn, $query)){
+    
   echo "Records inserted successfully.";
   $_SESSION['status'] = 'authorized';
-  header("location: home.php");
+  //header("location: home.php");
 } else{
   echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
 
@@ -75,6 +78,18 @@ if(mysqli_query($conn, $query)){
 // Close connection
 mysqli_close($conn);
 
+$conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('there was a problem connecting to the database.');
+$query2 = "INSERT INTO Status(Email, UserId, Status) VALUES('$Email', '', '')";
+if(mysqli_query($conn, $query2)){
+    
+  echo "Records inserted successfully.";
+  header("location: home.php");
+} else{
+  echo "ERROR: Could not able to execute $query2. " . mysqli_error($conn);
+
+}
+
+mysqli_close($conn);
 }
 
 function update_password($Email, $pwd){
