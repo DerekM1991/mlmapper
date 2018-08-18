@@ -16,9 +16,6 @@
     }
     h2{
    margin-left: 'auto';
-  
-
-    
 }
 </style>
 </head>
@@ -50,5 +47,7 @@
 </nav>
 <!--end top bar-->
 <h2>Contact info</h2>
-<?php
-echo "Don't call us, we'll call you!";
+
+<h7> We are here to help you succeed and reach others in your network. If for any reason you experience a problem or would like help using our features you can send us an email at:</h7>
+
+<h7>sales@whateverourdomainnameis.com</h7>

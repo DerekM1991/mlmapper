@@ -18,6 +18,7 @@ try
   $subscription = \Stripe\Subscription::create(array(
     'customer' => $customer->id,
     'items' => array(array('plan' => 'Yearly_Subscription')),
+    'coupon'=>'JustinM'
   ));
 $_SESSION['status'] = 'authorized';
   header('Location: home.php');

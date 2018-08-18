@@ -77,7 +77,18 @@ if(mysqli_query($conn, $query)){
 // Close connection
 mysqli_close($conn);
 
+/*$conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('there was a problem connecting to the database.');
+$query2 = "INSERT INTO Status(Email, UserId, Status) VALUES('$Email', '', '')";
+if(mysqli_query($conn, $query2)){
+    
+  echo "Records inserted successfully.";
+  header("location: signup.php");
+} else{
+  echo "ERROR: Could not able to execute $query2. " . mysqli_error($conn);
 
+}
+
+mysqli_close($conn);*/
 }
 
 function update_password($Email, $pwd){

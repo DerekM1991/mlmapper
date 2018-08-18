@@ -20,16 +20,17 @@ $type= $event_json->type;
 $conn = New mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME) or die('there was a problem connecting to the database.');
 
 if(isset($email)){
-    if($type != "customer.updated"){
+    if($type == "customer.updated"){
     //$status= $event_json->data->object->subscriptions->data[0]->status;
     $query= "INSERT INTO Status(Email, UserId, Status) VALUES('$email', '$customerId', '$status')";
     }
 }
+
 else{
     $customerId= $event_json->data->object->customer;
     $status= $event_json->data->object->status;
     if(isset($status)){
-        if($type != "charge.succeeded"){
+        if($type =="customer.subscription.created"||$type == "customer.subscription.deleted"){
     $query= "UPDATE Status 
     SET Status = '$status' 
     WHERE UserId='$customerId'";

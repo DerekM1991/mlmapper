@@ -18,14 +18,17 @@ try
   $subscription = \Stripe\Subscription::create(array(
     'customer' => $customer->id,
     'items' => array(array('plan' => 'Monthly_Subscription')),
+    'coupon'=>'JustinM'
   ));
 $_SESSION['status'] = 'authorized';
   header('Location: home.php');
   exit;
 }
+
 catch(Exception $e)
 {
   header('Location:oops.html');
-  print_r(error_log("unable to sign up customer:" . $_POST['stripeEmail'].
-    ", error:" . $e->getMessage()));
+  
+  echo error_log("unable to sign up customer:" . $_POST['stripeEmail'].
+    ", error:" . $e->getMessage());
 }

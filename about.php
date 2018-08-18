@@ -47,5 +47,8 @@
 <!--end top bar-->
 <h2>About Us</h2>
 
-<?php
-echo "Don't not currently taking any questons or explaining ourselves.";
+
+<h7>Building a business in a new untapped area can be difficult, but if done correctly will result in massive growth for your business. Mapper is here to help you and your team get connected and build a support system with people in new, hard to reach areas that don’t yet have a leader.<br><br>
+
+
+Once signed up, a pin will be dropped in your city letting others in your company know you are there. You will also be able to see where everyone else in your company is located so that you can plug in people and keep them in the loop when you can’t physically be there</h7>

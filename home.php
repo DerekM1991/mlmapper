@@ -1,11 +1,11 @@
-
 <?php
-
-require_once 'Membership.php';
+ob_start();
+require 'Membership.php';
 $membership = New Membership();
 $membership-> confirm_login();
 ?>
 <!--start top bar-->
+
 <html >
 <br>
 <br>
@@ -116,7 +116,7 @@ $membership-> confirm_login();
         var infoWindow = new google.maps.InfoWindow;
 
           // Change this depending on the name of your PHP or XML file
-          downloadUrl('http://192.168.64.2/xmldb.php', function(data) {
+          downloadUrl('https://derekmerf.000webhostapp.com/xmldb.php', function(data) {
             var xml = data.responseXML;
             var markers = xml.documentElement.getElementsByTagName('marker');
             Array.prototype.forEach.call(markers, function(markerElem) {
